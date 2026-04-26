@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahnarzt Rosenheim — Willkommen bei SALIN 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #000;
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #000; color: #fff; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ─── NAV ─── */
+.nav {
+  background: #0a0a0a;
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.nav-logo-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.1em 0.3em;
+  display: inline-block;
+  line-height: 1;
+}
+.nav-logo-sub {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.35rem;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.nav-links a:hover { color: #fff; }
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.nav-burger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: #fff;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #000;
+}
+.hero-top {
+  padding: 1.5rem 2rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-say {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 16vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  color: #000;
+  text-align: right;
+  padding-right: 2rem;
+}
+.hero-aah-wrap {
+  position: relative;
+  overflow: visible;
+}
+.hero-aah {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(7rem, 20vw, 22rem);
+  line-height: 0.82;
+  letter-spacing: -0.01em;
+  color: #000;
+  white-space: nowrap;
+  padding: 0 1.5rem;
+  display: block;
+}
+.hero-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0 2rem 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -1rem;
+}
+.hero-lips {
+  width: clamp(180px, 28vw, 320px);
+  height: clamp(100px, 16vw, 180px);
+  background: #111;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-lips svg {
+  width: 70%;
+  opacity: 0.85;
+}
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 1.5rem;
+}
+.hero-card-thumb {
+  width: clamp(80px, 12vw, 130px);
+  height: clamp(50px, 7vw, 80px);
+  background: #111;
+  border: 1px solid #333;
+}
+.hero-info-bar {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+.hero-info-text {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.hero-info-text strong { color: #fff; font-weight: 700; }
+.hero-info-btn {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  padding: 0.5rem 1.25rem;
+  white-space: nowrap;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.hero-info-btn:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+/* Scroll indicator */
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.4);
+}
+.hero-scroll::before {
+  content: '';
+  display: inline-block;
+  width: 1px; height: 24px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* ─── TWO CARDS ─── */
+.two-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 3px solid #000;
+}
+.card-block {
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 3px solid #000;
+}
+.card-block:last-child { border-right: none; }
+.card-block.dark { background: #0a0a0a; color: #fff; }
+.card-block.light { background: #fff; color: #000; }
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+}
+.card-arrow {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 200ms;
+  align-self: flex-start;
+}
+.card-block.dark .card-arrow:hover { background: #fff; color: #000; }
+.card-block.light .card-arrow:hover { background: #000; color: #fff; }
+
+/* ─── ZAHNARZT SECTION ─── */
+.zahnarzt-section {
+  padding: 5rem 3rem 3rem;
+  border-bottom: 3px solid #000;
+}
+.zahnarzt-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 11rem);
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: #000;
+  margin-bottom: 3rem;
+}
+.zahnarzt-body {
+  max-width: 680px;
+}
+.zahnarzt-body h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+.zahnarzt-body p {
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: #111;
+  margin-bottom: 1rem;
+}
+.zahnarzt-body a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+.zahnarzt-body strong { font-weight: 600; }
+
+/* ─── OPEN FOR YOUR SMILE ─── */
+.open-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 4.5rem 3rem;
+  border-bottom: 3px solid #000;
+}
+.open-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.open-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  margin-bottom: 2rem;
+}
+.hours-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.hours-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.hours-item:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
+.hours-day { color: rgba(255,255,255,0.65); }
+.hours-time { font-weight: 500; white-space: nowrap; }
+.open-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #fff;
+  color: #000;
+  padding: 1rem 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+.btn-primary:hover { background: transparent; color: #fff; }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  border: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+.btn-secondary:hover { border-color: #fff; }
+.btn-secondary svg { flex-shrink: 0; }
+
+/* ─── MARQUEE ─── */
+.marquee-bar {
+  background: #000;
+  border-bottom: 3px solid #000;
+  padding: 1.5rem 0;
+  overflow: hidden;
+  cursor: default;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeRoll 24s linear infinite;
+  white-space: nowrap;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 2rem;
+}
+.m-dash {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.7em;
+}
+@keyframes marqueeRoll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── WHAT DO WE DO ─── */
+.what-section {
+  background: #fff;
+  padding: 5rem 3rem 4rem;
+  border-bottom: 3px solid #000;
+}
+.what-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 0.85;
+  margin-bottom: 4rem;
+}
+.what-heading .line1 {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  letter-spacing: 0.01em;
+  display: block;
+}
+.what-heading .line2 {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  letter-spacing: 0.01em;
+  color: rgba(0,0,0,0.18);
+  display: block;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1.5px solid rgba(0,0,0,0.12);
+  border-left: 1.5px solid rgba(0,0,0,0.12);
+  margin-bottom: 3rem;
+}
+.service-cell {
+  padding: 2.5rem 2rem;
+  border-right: 1.5px solid rgba(0,0,0,0.12);
+  border-bottom: 1.5px solid rgba(0,0,0,0.12);
+}
+.service-icon {
+  width: 48px; height: 48px;
+  margin-bottom: 1.25rem;
+  color: #000;
+}
+.service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+.service-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #333;
+}
+.what-cta {
+  text-align: center;
+  padding-top: 1rem;
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: #000;
+  padding: 1rem 2.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.btn-outline:hover { background: #000; color: #fff; }
+
+/* ─── MISSION SECTION ─── */
+.mission-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 5rem 3rem 6rem;
+  border-bottom: 3px solid #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.mission-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: rgba(255,255,255,0.82);
+}
+.mission-body p { margin-bottom: 1rem; }
+.mission-body strong { font-weight: 600; color: #fff; }
+.mission-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  text-align: right;
+}
+
+/* ─── TEAM SECTION ─── */
+.team-section {
+  background: #fff;
+  padding: 5rem 3rem;
+  border-bottom: 3px solid #000;
+}
+.team-eyebrow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+.team-eyebrow-sub {
+  font-family: 'Barlow', sans-serif;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+}
+.team-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.team-body {
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: #111;
+}
+.team-body p { margin-bottom: 1rem; }
+.team-body strong { font-weight: 600; }
+.team-img-placeholder {
+  aspect-ratio: 4/3;
+  background: #f0f0f0;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.3);
+}
+.team-btn-wrap { margin-top: 2rem; }
+.btn-black {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.btn-black:hover { background: transparent; color: #000; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 3.5rem 3rem 2rem;
+}
+.footer-inner { display: grid; grid-template-columns: auto 1fr 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 2.5rem; }
+.footer-logo-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.15em 0.35em;
+  display: inline-block;
+  line-height: 1;
+}
+.footer-logo-sub {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.4rem;
+}
+.footer-col-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.85rem;
+}
+.footer-col p, .footer-col address {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  font-style: normal;
+  color: rgba(255,255,255,0.72);
+  font-weight: 300;
+}
+.footer-bar {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer-bar a { color: rgba(255,255,255,0.45); transition: color 200ms; }
+.footer-bar a:hover { color: #fff; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .hero-say { font-size: clamp(4rem, 12vw, 8rem); }
+  .hero-aah { font-size: clamp(4.5rem, 14vw, 10rem); }
+  .two-cards { grid-template-columns: 1fr; }
+  .card-block { border-right: none; border-bottom: 3px solid #000; }
+  .card-block:last-child { border-bottom: none; }
+  .open-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .mission-section { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mission-heading { text-align: left; }
+  .team-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .zahnarzt-section, .what-section, .open-section, .team-section { padding: 3.5rem 1.5rem; }
+  .two-cards .card-block { padding: 2.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <span class="nav-logo-mark">SALIN 11</span>
+    <span class="nav-logo-sub">Der Zahnarzt in Rosenheim</span>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#">Praxis</a></li>
+      <li><a href="#">Das bieten wir</a></li>
+      <li><a href="#">Mehr über uns</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+    <div class="nav-burger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-say">SAY</div>
+  </div>
+
+  <div class="hero-aah-wrap">
+    <span class="hero-aah">AAAHHHHHHHHHH</span>
+  </div>
+
+  <div class="hero-center">
+    <div class="hero-lips">
+      <!-- Lips SVG placeholder -->
+      <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 40 C40 10, 80 5, 100 20 C120 5, 160 10, 190 40 C160 70, 120 78, 100 65 C80 78, 40 70, 10 40Z" fill="#fff" opacity="0.9"/>
+        <path d="M40 40 C60 28, 85 25, 100 32 C115 25, 140 28, 160 40 C145 52, 118 58, 100 54 C82 58, 55 52, 40 40Z" fill="#c0505a"/>
+        <path d="M55 40 C70 34, 88 32, 100 36 C112 32, 130 34, 145 40" stroke="#8b2030" stroke-width="1" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card-thumb"></div>
+      <div class="hero-card-thumb"></div>
+    </div>
+  </div>
+
+  <div class="hero-info-bar">
+    <p class="hero-info-text">
+      <strong>ZAHNARZT SALIN 11</strong> — VON DR. MED. DENT. FRITZ &amp; VÖLCKER, ROSENHEIM
+    </p>
+    <a href="#termin" class="hero-info-btn">ZU DEN TERMINEN →</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TWO CARDS -->
+<div class="two-cards">
+  <div class="card-block dark">
+    <div class="card-title">DAS<br>BIETEN<br>WIR</div>
+    <div class="card-arrow" onclick="document.querySelector('.what-section').scrollIntoView({behavior:'smooth'})">→</div>
+  </div>
+  <div class="card-block light">
+    <div class="card-title">MEHR<br>ÜBER<br>UNS</div>
+    <div class="card-arrow" onclick="document.querySelector('.team-section').scrollIntoView({behavior:'smooth'})">→</div>
+  </div>
+</div>
+
+<!-- ZAHNARZT SECTION -->
+<section class="zahnarzt-section">
+  <h2 class="zahnarzt-heading">ZAHNARZT<br>ROSENHEIM</h2>
+  <div class="zahnarzt-body">
+    <h3>Servus in der Wohlfühlpraxis</h3>
+    <br>
+    <p>Wie alles es, damit Sie sich auf Ihren nächsten Besuch beim Zahnarzt Rosenheim freuen wollen wir auf eine kleine Auswahl von Leistungen für Sie aufgeführt haben, die in der Praxis ausgeführt werden? Mit der großzügigen Aufteilung in unserem Behandlungsbereich haben wir eine unvergeßliche <strong>Wohlfühlatmosphäre</strong> kreiert.</p>
+    <p>Als Zahnarzt Rosenheim und das Team von SALIN 11.</p>
+  </div>
+</section>
+
+<!-- OPEN FOR YOUR SMILE -->
+<section class="open-section" id="termin">
+  <div class="open-inner">
+    <div>
+      <h2 class="open-heading">OPEN<br>FOR YOUR<br>SMILE</h2>
+      <ul class="hours-list">
+        <li class="hours-item">
+          <span class="hours-day">Montag, Dienstag</span>
+          <span class="hours-time">07:00 – 19:00 Uhr</span>
+        </li>
+        <li class="hours-item">
+          <span class="hours-day">Mittwoch</span>
+          <span class="hours-time">07:00 – 12:00 Uhr</span>
+        </li>
+        <li class="hours-item">
+          <span class="hours-day">Donnerstag</span>
+          <span class="hours-time">07:00 – 19:00 Uhr</span>
+        </li>
+        <li class="hours-item">
+          <span class="hours-day">Freitag</span>
+          <span class="hours-time">07:00 – 12:00 Uhr</span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="open-ctas">
+        <a href="#" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Termin vereinbaren
+        </a>
+        <a href="#" class="btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.528 5.839L0 24l6.337-1.508A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          WhatsApp Termin vereinbaren
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-group">111 ZAHNMEDIZIN <span class="m-dash">—</span> 111 ZAHNMEDIZIN <span class="m-dash">—</span> 111 ZAHNMEDIZIN <span class="m-dash">—</span>&nbsp;&nbsp;</span>
+    <span class="marquee-group">111 ZAHNMEDIZIN <span class="m-dash">—</span> 111 ZAHNMEDIZIN <span class="m-dash">—</span> 111 ZAHNMEDIZIN <span class="m-dash">—</span>&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- WHAT DO WE DO -->
+<section class="what-section">
+  <h2 class="what-heading">
+    <span class="line1">WHAT DO</span>
+    <span class="line2">WE DO?</span>
+  </h2>
+
+  <div class="services-grid">
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <path d="M24 6C18 6 13 11 13 18c0 4 1.5 7.5 4 10l2 12h10l2-12c2.5-2.5 4-6 4-10 0-7-5-12-11-12z"/>
+        </svg>
+      </div>
+      <div class="service-title">Allgemeine Zahnmedizin &amp; Prophylaxe</div>
+      <p class="service-desc">Ein Lächeln lässt Menschen verbinden und gesunde Zähne ein ganzes Leben dabei — wie gute als lang und zu beginn schön und uns. Es ist die zahnärztliche Vorsorgeuntersuchung oder die regelmäßige Prophylaxe — das legt den Grundstein für die Zahngesundheit.</p>
+    </div>
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <circle cx="24" cy="24" r="14"/>
+          <path d="M24 10v4M24 34v4M10 24h4M34 24h4"/>
+          <circle cx="24" cy="24" r="5" fill="currentColor" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="service-title">Konservierende Zahnheilkunde</div>
+      <p class="service-desc">Manchmal passiert es doch: Ein Loch in Zahn oder eine Wurzelbehandlung machen einen Eingriff nötig. Mit modernen Methoden und Materialien gehen dabei, dass wir Ihren Zahn so lange wie möglich gesund erhalten.</p>
+    </div>
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <path d="M14 20h20v14a6 6 0 01-6 6H20a6 6 0 01-6-6V20z"/>
+          <path d="M10 14h28v6H10z"/>
+        </svg>
+      </div>
+      <div class="service-title">Zahnersatz</div>
+      <p class="service-desc">Wenn ein oder mehrere Zähne fehlen, passt das Gebiss. Als eine der ersten Zahnersatzmethode bieten wir Ihnen hochqualitativen Zahnersatz in verschiedenen Bereichen: Kronen, Brücken und hochwertigen Zahnersatz.</p>
+    </div>
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <path d="M8 32 C14 20, 24 16, 24 16 C24 16, 34 20, 40 32"/>
+          <path d="M12 30 C17 22, 24 19, 24 19 C24 19, 31 22, 36 30"/>
+          <path d="M16 28 C20 24, 24 22, 28 28"/>
+        </svg>
+      </div>
+      <div class="service-title">Ästhetik</div>
+      <p class="service-desc">Wer von uns träumt nicht von einem <strong>strahlend weißen Lächeln</strong>? Dank moderner ästhetischer Zahnmedizin & Behandlung kann sich heute fast jeder diesen Wunsch erfüllen. Dazu setzen wir auf die neuesten Behandlungsmethoden.</p>
+    </div>
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <path d="M12 36 C12 28, 24 24, 24 16 C24 24, 36 28, 36 36"/>
+          <path d="M16 36 C16 30, 24 27, 24 20 C24 27, 32 30, 32 36"/>
+        </svg>
+      </div>
+      <div class="service-title">Parodontologie</div>
+      <p class="service-desc">Für die gesunde Mundflora und Mundgesundheit bieten wir Ihnen eine umfassende <strong>Parodontologie</strong>. Mit uns arbeiten Sie für eine gesundere, sichere und professionellere Zahnpflege zusammen.</p>
+    </div>
+    <div class="service-cell">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <rect x="12" y="12" width="24" height="28" rx="2"/>
+          <path d="M18 12V8h12v4"/>
+          <path d="M18 24h12M18 30h8"/>
+        </svg>
+      </div>
+      <div class="service-title">Inhouse-Labor</div>
+      <p class="service-desc">In unserem hauseigenen Labor arbeiten wir Zahntechniker und Zahnärzte gemeinsam zusammen, um <strong>hochwertigen Zahnersatz</strong> schnell und präzise herzustellen.</p>
+    </div>
+  </div>
+
+  <div class="what-cta">
+    <a href="#" class="btn-outline">Mehr erfahren →</a>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section">
+  <div class="mission-body">
+    <p>Ihr gesundes und schönes Lächeln ist unsere Mission. Mit Erfahrung, Expertise und Empathie ist das Zahnarzt Rosenheim Team für Sie da — egal ob jung oder jung geblieben.</p>
+  </div>
+  <div class="mission-heading">YOUR SMILE<br>IS OUR<br>MISSION</div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-eyebrow">ZAHNARZT ROSENHEIM:</div>
+  <div class="team-eyebrow-sub">HER SPITZENTEAM</div>
+  <div class="team-inner">
+    <div>
+      <div class="team-body">
+        <p>Wir sind IHR TO Do uns und helfen Ihnen als beste Bestandteil der Rosenheimer Zahnarztins erklären. Das bedeutet nichts mehr, dass wir alles tun und, gemeinsam. Das bedeutet wir haben keinen Zahnarzt in Rosenheim der für alle modernen Zahnmedizins <strong>UNPRODUKTIVER</strong> im Stag liegt für Alles und überweist sein Patienten. Dazu sind wir Ihr SALIN 11-Team und wir treten auf die Bedürfnisse aller Patienten ein. Wir haben fragen und antworten das über die Öffnungszeiten 09:00 bis 19:00 Uhr können. Wir stehen uns keine großen Gespräche oder Termin informieren.</p>
+      </div>
+      <div class="team-btn-wrap">
+        <a href="#" class="btn-black">Mehr erfahren →</a>
+      </div>
+    </div>
+    <div class="team-img-placeholder">Team-Foto</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-mark">SALIN 11</div>
+      <div class="footer-logo-sub">Zahnarztpraxis</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Öffnungszeiten</div>
+      <p>
+        Montag – Dienstag<br>07:00 – 19:00 Uhr<br>
+        Mittwoch<br>07:00 – 12:00 Uhr<br>
+        Donnerstag<br>07:00 – 19:00 Uhr<br>
+        Freitag<br>07:00 – 12:00 Uhr
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Telefonnummer</div>
+      <p>
+        Montag – Mittwoch<br>07:00 – 19:00 Uhr<br>
+        Donnerstag – Freitag<br>07:00 – 19:00 Uhr
+      </p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Anschrift</div>
+      <address>
+        Salinstraße 11<br>
+        83022 Rosenheim<br><br>
+        <a href="tel:+4980315000">+49 (0) 8031 5000</a>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 SALIN 11 · Rosenheim · Zahnarztpraxis</span>
+    <span>
+      <a href="#">Impressum</a> ·
+      <a href="#">Datenschutz</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+// Simple mobile menu toggle
+document.querySelector('.nav-burger').addEventListener('click', function() {
+  const links = document.querySelector('.nav-links');
+  if (!links) return;
+  const isVisible = links.style.display === 'flex';
+  links.style.display = isVisible ? 'none' : 'flex';
+  links.style.flexDirection = 'column';
+  links.style.position = 'absolute';
+  links.style.top = '100%';
+  links.style.left = '0';
+  links.style.right = '0';
+  links.style.background = '#0a0a0a';
+  links.style.padding = '1rem 2rem';
+  links.style.gap = '1.25rem';
+  links.style.borderBottom = '3px solid rgba(255,255,255,0.1)';
+});
+
+// Sticky nav subtle effect
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) nav.style.borderBottomColor = 'rgba(255,255,255,0.15)';
+  else nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+}, { passive: true });
+</script>
+</body>
+</html>

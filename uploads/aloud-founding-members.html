@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ALOUD — The Founding 25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --cream: #F4EFE6;
+    --pink: #FF1A75;
+    --pink-light: #FFB8D4;
+    --blue: #2E4FFF;
+    --green: #00B86B;
+    --orange: #FF5A1F;
+    --yellow: #FFD400;
+    --display: 'Anton', 'Archivo Black', sans-serif;
+    --body: 'Archivo', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    position: relative;
+  }
+
+  .container-narrow {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    position: relative;
+  }
+
+  /* ============ NAVIGATION ============ */
+  nav {
+    background: var(--black);
+    color: var(--cream);
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .wordmark {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.75rem;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .wordmark .o {
+    display: inline-block;
+    color: var(--pink);
+    transform: scale(1.05);
+  }
+
+  .nav-meta {
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid var(--pink);
+    color: var(--pink);
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    background: var(--pink);
+    color: var(--black);
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 3rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--cream);
+  }
+
+  .hero-line {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .hero-line .accent {
+    color: var(--cream);
+    -webkit-text-stroke: 2px var(--black);
+  }
+
+  .hero-meta {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-top: 2px solid var(--black);
+    padding-top: 2rem;
+  }
+
+  .hero-meta-item {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+
+  .hero-meta-item strong {
+    display: block;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-top: 0.25rem;
+  }
+
+  /* ============ MARQUEE ============ */
+  .marquee {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 1.25rem 0;
+    overflow: hidden;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .marquee-track span {
+    display: inline-flex;
+    align-items: center;
+    gap: 3rem;
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--pink);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ SECTION LABEL ============ */
+  .section-label {
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    display: inline-block;
+  }
+
+  /* ============ INVITATION ============ */
+  .invitation {
+    background: var(--cream);
+    color: var(--black);
+    padding: 7rem 0;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .invitation-text {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  .invitation-text .highlight {
+    background: var(--pink);
+    color: var(--cream);
+    padding: 0 0.3em;
+    display: inline-block;
+    transform: rotate(-1deg);
+    margin: 0 0.1em;
+  }
+
+  /* ============ THE WHY ============ */
+  .why {
+    background: var(--blue);
+    color: var(--cream);
+    padding: 8rem 0;
+    border-bottom: 4px solid var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why .section-label {
+    color: var(--pink-light);
+  }
+
+  .letter-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    color: var(--cream);
+    max-width: 18ch;
+  }
+
+  .letter-heading .underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .letter-heading .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0.05em;
+    left: 0;
+    right: 0;
+    height: 0.18em;
+    background: var(--pink);
+    z-index: -1;
+  }
+
+  .letter-body {
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--cream);
+    max-width: 56ch;
+  }
+
+  .letter-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .letter-body strong {
+    background: var(--pink);
+    color: var(--cream);
+    padding: 0 0.2em;
+    font-weight: 600;
+  }
+
+  /* ============ THE STACK ============ */
+  .stack {
+    background: var(--black);
+    color: var(--cream);
+    padding: 8rem 0;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .stack .section-label {
+    color: var(--yellow);
+  }
+
+  .stack-intro {
+    margin-bottom: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .stack-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    text-transform: uppercase;
+  }
+
+  .stack-heading .yellow {
+    color: var(--yellow);
+  }
+
+  .stack-sub {
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--cream);
+    opacity: 0.75;
+    max-width: 32ch;
+    padding-bottom: 0.5rem;
+  }
+
+  .stack-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .layer {
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 2px solid var(--cream);
+    align-items: start;
+  }
+
+  .layer:last-child {
+    border-bottom: 2px solid var(--cream);
+  }
+
+  .layer-num {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--pink);
+  }
+
+  .layer-name {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--cream);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .layer-descriptor {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--yellow);
+    margin-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  .layer-content p {
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .program {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+    padding: 0.6rem 1.1rem;
+    border: 1.5px solid var(--cream);
+    transition: all 0.2s ease;
+  }
+
+  .program:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+  }
+
+  .stack-closer {
+    margin-top: 6rem;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.05;
+    color: var(--yellow);
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 22ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ============ FIRST MIC ============ */
+  .first-mic {
+    background: var(--green);
+    color: var(--black);
+    padding: 8rem 0;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .first-mic .section-label {
+    color: var(--black);
+  }
+
+  .mic-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 5rem;
+    align-items: end;
+  }
+
+  .mic-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .mic-heading .stroke {
+    -webkit-text-stroke: 2px var(--black);
+    color: transparent;
+  }
+
+  .mic-details {
+    background: var(--black);
+    color: var(--cream);
+    padding: 2.5rem 2rem;
+  }
+
+  .mic-detail {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+  }
+
+  .mic-detail:last-child { border-bottom: none; }
+  .mic-detail:first-child { padding-top: 0; }
+
+  .mic-detail-label {
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .mic-detail-value {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--cream);
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  /* ============ FOUNDING MEMBERSHIP ============ */
+  .founding {
+    background: var(--orange);
+    color: var(--black);
+    padding: 8rem 0;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .founding .section-label {
+    color: var(--black);
+  }
+
+  .founding-intro {
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .founding-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .founding-heading .cream {
+    color: var(--cream);
+  }
+
+  .founding-lead {
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    color: var(--black);
+    padding-bottom: 0.5rem;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 3px solid var(--black);
+    border-left: 3px solid var(--black);
+  }
+
+  .benefit {
+    padding: 2.5rem 2rem;
+    border-right: 3px solid var(--black);
+    border-bottom: 3px solid var(--black);
+    background: var(--orange);
+    transition: background 0.3s ease;
+  }
+
+  .benefit:hover {
+    background: var(--cream);
+  }
+
+  .benefit-num {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+
+  .benefit-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.05;
+    color: var(--black);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .benefit-desc {
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--black);
+  }
+
+  .benefit-desc strong {
+    font-weight: 700;
+  }
+
+  .pricing-callout {
+    margin-top: 4rem;
+    background: var(--black);
+    color: var(--cream);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .pricing-text {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.05;
+    color: var(--cream);
+    text-transform: uppercase;
+  }
+
+  .pricing-text .accent { color: var(--orange); }
+
+  .price-block {
+    text-align: right;
+    border-left: 1.5px solid rgba(244, 239, 230, 0.3);
+    padding-left: 2rem;
+  }
+
+  .price-label {
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.4rem;
+  }
+
+  .price-value {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 2.75rem;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  /* ============ THE NUMBER ============ */
+  .number-section {
+    background: var(--pink);
+    color: var(--black);
+    padding: 6rem 0;
+    text-align: center;
+    border-bottom: 4px solid var(--black);
+    overflow: hidden;
+  }
+
+  .number-eyebrow {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--black);
+  }
+
+  .number-display {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(10rem, 28vw, 22rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--black);
+  }
+
+  .number-caption {
+    margin-top: 1rem;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--black);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .number-remaining {
+    margin-top: 2rem;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+
+  /* ============ PERSONAL NOTE ============ */
+  .note {
+    background: var(--cream);
+    color: var(--black);
+    padding: 8rem 0;
+    border-bottom: 4px solid var(--black);
+  }
+
+  .note-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .note-portrait-wrap {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .note-portrait {
+    aspect-ratio: 4/5;
+    background: var(--green);
+    border: 3px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .note-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1.5px solid var(--black);
+    pointer-events: none;
+  }
+
+  .note-portrait-caption {
+    margin-top: 1rem;
+    font-family: var(--body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+  }
+
+  .note-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 0.95;
+    color: var(--black);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  .note-heading .pink {
+    color: var(--pink);
+  }
+
+  .note-body {
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--black);
+  }
+
+  .note-body p {
+    margin-bottom: 1.5rem;
+  }
+
+  .note-body p:first-child::first-letter {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 0.85;
+    float: left;
+    margin: 0.05em 0.15em 0 -0.05em;
+    color: var(--pink);
+  }
+
+  .note-signature {
+    margin-top: 3rem;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  /* ============ THE ASK ============ */
+  .ask {
+    background: var(--black);
+    color: var(--cream);
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ask::before {
+    content: 'ALOUD ALOUD ALOUD ALOUD ALOUD ALOUD';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    white-space: nowrap;
+    font-family: var(--display);
+    font-size: 18vw;
+    color: var(--pink);
+    opacity: 0.08;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .ask-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .ask-eyebrow {
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid var(--pink);
+  }
+
+  .ask-heading {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .ask-heading .pink {
+    color: var(--pink);
+  }
+
+  .ask-sub {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    color: var(--cream);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--pink);
+    color: var(--black);
+    padding: 1.75rem 3.5rem;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--cream);
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--pink);
+  }
+
+  .cta-button::after {
+    content: '→';
+    transition: transform 0.25s ease;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .cta-button:hover::after {
+    transform: translateX(6px);
+  }
+
+  .ask-fineprint {
+    margin-top: 3rem;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 3rem 0;
+    background: var(--black);
+    color: var(--cream);
+    text-align: center;
+    border-top: 2px solid var(--cream);
+  }
+
+  .footer-mark {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+  }
+
+  .footer-mark .o {
+    color: var(--pink);
+  }
+
+  .footer-tag {
+    margin-top: 0.75rem;
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.6;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .container, .container-narrow, nav {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .hero { padding: 3rem 0 4rem; }
+    .invitation, .why, .stack, .first-mic, .founding, .note, .ask {
+      padding: 4.5rem 0;
+    }
+
+    .stack-intro,
+    .mic-grid,
+    .founding-intro,
+    .note-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .layer {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+    }
+
+    .layer-num { font-size: 2.5rem; }
+
+    .benefits {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-callout {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      gap: 2rem;
+    }
+
+    .price-block {
+      text-align: left;
+      border-left: none;
+      padding-left: 0;
+      border-top: 1.5px solid rgba(244, 239, 230, 0.3);
+      padding-top: 1.5rem;
+    }
+
+    .note-portrait-wrap {
+      position: static;
+      max-width: 280px;
+    }
+
+    .marquee-track { font-size: 1.125rem; gap: 2rem; }
+    .marquee-track span { gap: 2rem; }
+
+    .nav-meta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wordmark">AL<span class="o">O</span>UD</div>
+  <div class="nav-meta">Founding Circle · Private</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Before the doors open</div>
+    <h1 class="hero-line">
+      A woman speaking <span class="accent">out loud</span> is an act of memory and an act of future-making at once.
+    </h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Project<strong>ALOUD</strong></div>
+      <div class="hero-meta-item">Phase<strong>Founding 25</strong></div>
+      <div class="hero-meta-item">Location<strong>Lisbon</strong></div>
+      <div class="hero-meta-item">Status<strong>Open</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Hers to say <span class="marquee-dot"></span> Hers to write <span class="marquee-dot"></span> Hers to read aloud <span class="marquee-dot"></span> Hers to begin <span class="marquee-dot"></span> Hers to remember <span class="marquee-dot"></span> Hers to build <span class="marquee-dot"></span></span>
+    <span>Hers to say <span class="marquee-dot"></span> Hers to write <span class="marquee-dot"></span> Hers to read aloud <span class="marquee-dot"></span> Hers to begin <span class="marquee-dot"></span> Hers to remember <span class="marquee-dot"></span> Hers to build <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ============ INVITATION ============ -->
+<section class="invitation">
+  <div class="container-narrow">
+    <div class="section-label"><span class="dot"></span> 01 · The invitation</div>
+    <p class="invitation-text">
+      ALOUD is launching in Lisbon. Before we open the doors,<span class="highlight">25 women</span>will found it with us — and shape what it becomes.
+    </p>
+  </div>
+</section>
+
+<!-- ============ THE WHY ============ -->
+<section class="why">
+  <div class="container-narrow">
+    <div class="section-label"><span class="dot"></span> 02 · Why now</div>
+    <h2 class="letter-heading">For the <span class="underline">grandmothers</span> whose voices were edited out, and for the daughters not yet old enough to read.</h2>
+    <div class="letter-body">
+      <p>Most of the women I come from did not get to speak. Their writing lived in margins and recipe cards. Their best lines were said at sinks, into the steam, to no one. Whole lifetimes of intelligence and feeling moved through them and left no public trace.</p>
+      <p>I think about this often. Especially when I am in a room of women, and the room is laughing or weeping or going very quiet, and someone has just said the thing that needed saying — and I realize how recent it is that we get to gather like this at all.</p>
+      <p>ALOUD is a stage and a community for women's voices, in writing and in speech, in performance and in private. But it is also, more quietly, <strong>an archive</strong>. Every word read aloud at ALOUD is recorded into the long memory of women's voices being heard.</p>
+      <p>It is a gift to the grandmothers we lost without ever fully hearing. It is a stage for the daughters who will inherit us. And it is, right now, an invitation to twenty-five women who want to help build it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE STACK ============ -->
+<section class="stack">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 03 · What we're building</div>
+    <div class="stack-intro">
+      <h2 class="stack-heading">The architecture is a <span class="yellow">stack</span>, not a list.</h2>
+      <p class="stack-sub">Three layers, working together. Events bring her in. Membership holds her. Care brings her back.</p>
+    </div>
+
+    <div class="stack-layers">
+
+      <div class="layer">
+        <div class="layer-num">01</div>
+        <div>
+          <div class="layer-name">The Stage</div>
+          <div class="layer-descriptor">Live · Public · Collective</div>
+        </div>
+        <div class="layer-content">
+          <p>Five formats of voice, each a different register. Spoken into a microphone. Written and read. Drafted in a circle of eight. Spoken over food. Voiced through the body.</p>
+          <div class="programs">
+            <span class="program">The Mic</span>
+            <span class="program">The Read</span>
+            <span class="program">The Circle</span>
+            <span class="program">The Table</span>
+            <span class="program">The Body</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-num">02</div>
+        <div>
+          <div class="layer-name">The Room</div>
+          <div class="layer-descriptor">Persistent · Digital · Communal</div>
+        </div>
+        <div class="layer-content">
+          <p>The membership layer. The community that lives between events — where members gather, share work in progress, find their pod, and build the archive-in-progress together.</p>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-num">03</div>
+        <div>
+          <div class="layer-name">The Care</div>
+          <div class="layer-descriptor">Connective · Human · Intentional</div>
+        </div>
+        <div class="layer-content">
+          <p>The Check-In, and the ethos beneath everything. The reason a woman comes back. First-timers are sacred at ALOUD; this is the layer that holds the promise.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="stack-closer">Each layer feeds the next. The stack is what makes ALOUD more than its events.</p>
+  </div>
+</section>
+
+<!-- ============ FIRST MIC ============ -->
+<section class="first-mic">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 04 · The first night</div>
+    <div class="mic-grid">
+      <h2 class="mic-heading">One hundred women, <span class="stroke">one room</span>, one night.</h2>
+      <div class="mic-details">
+        <div class="mic-detail">
+          <div class="mic-detail-label">Date</div>
+          <div class="mic-detail-value">May 27, 2026</div>
+        </div>
+        <div class="mic-detail">
+          <div class="mic-detail-label">Venue</div>
+          <div class="mic-detail-value">Cultura Lounge</div>
+        </div>
+        <div class="mic-detail">
+          <div class="mic-detail-label">City</div>
+          <div class="mic-detail-value">Lisbon</div>
+        </div>
+        <div class="mic-detail">
+          <div class="mic-detail-label">Founding members</div>
+          <div class="mic-detail-value">In the front row</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDING MEMBERSHIP ============ -->
+<section class="founding">
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> 05 · Founding membership</div>
+    <div class="founding-intro">
+      <h2 class="founding-heading">Founding members don't <span class="cream">join</span> ALOUD. They make it possible.</h2>
+      <p class="founding-lead">
+        Twenty-five women will found ALOUD before the doors open. What you receive is what cannot be offered again — not at this rate, not at this proximity, not at this stage.
+      </p>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-num">01</div>
+        <h3 class="benefit-title">Lifetime founding rate</h3>
+        <p class="benefit-desc">
+          Lock in today's rate <strong>for life</strong>. Never raised, even as ALOUD grows into chapters. This rate disappears at member 26.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-num">02</div>
+        <h3 class="benefit-title">Your name in the founding archive</h3>
+        <p class="benefit-desc">
+          The 25 names on the founding roll are kept permanently — in the physical archive, in the digital one, on the wall of every chapter ALOUD opens.
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-num">03</div>
+        <h3 class="benefit-title">Priority on every Stage event</h3>
+        <p class="benefit-desc">
+          First seats at every Mic. First spots in The Circle (capped at eight). First places at The Table. <strong>You don't queue for what you helped build.</strong>
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-num">04</div>
+        <h3 class="benefit-title">The founding gathering</h3>
+        <p class="benefit-desc">
+          A private dinner before the first public Mic. The 25 of you, together, the night before ALOUD becomes ALOUD. <strong>You meet your sisters in this work.</strong>
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-num">05</div>
+        <h3 class="benefit-title">A voice in what we build next</h3>
+        <p class="benefit-desc">
+          Founding members shape the year ahead. New formats, new partnerships, the question of which city becomes ALOUD's second chapter. <strong>You are consulted.</strong>
+        </p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-num">06</div>
+        <h3 class="benefit-title">Everything else, included</h3>
+        <p class="benefit-desc">
+          All Stage events, full access to The Room, your pod, The Check-In, every workshop and gathering. <strong>The whole world, not a tier.</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="pricing-callout">
+      <div class="pricing-text">
+        Today's rate. <span class="accent">Locked for life.</span> After 25, it changes — and never returns.
+      </div>
+      <div class="price-block">
+        <div class="price-label">Monthly</div>
+        <div class="price-value">€55</div>
+      </div>
+      <div class="price-block">
+        <div class="price-label">Quarterly</div>
+        <div class="price-value">€135</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE NUMBER ============ -->
+<section class="number-section">
+  <div class="container-narrow">
+    <div class="number-eyebrow">The founding circle</div>
+    <div class="number-display">25</div>
+    <div class="number-caption">Twenty-five women. One circle.</div>
+    <div class="number-remaining">— Closing when full —</div>
+  </div>
+</section>
+
+<!-- ============ PERSONAL NOTE ============ -->
+<section class="note">
+  <div class="container">
+    <div class="note-grid">
+      <div class="note-portrait-wrap">
+        <div class="note-portrait">[ Portrait of Genevieve ]</div>
+        <div class="note-portrait-caption">Genevieve · Founder</div>
+      </div>
+      <div>
+        <div class="section-label"><span class="dot"></span> 06 · A note from me</div>
+        <h2 class="note-heading">Sisterhood is the <span class="pink">oldest technology</span> I know.</h2>
+        <div class="note-body">
+          <p>I have spent the last two and a half years gathering people in writing circles in Lisbon. Over a hundred came through those rooms. Some of them are still my closest friends. All of them taught me that the room itself is the work — that what we build between us, in language and in attention, is real.</p>
+          <p>ALOUD is the next thing. It is the room I want to spend my life building. It is, specifically and intentionally, a room for women — because the lineage I keep finding myself inside is a lineage of women, and because the silence I keep finding myself wanting to break is the silence women have inherited.</p>
+          <p>If you are reading this, it is because I want you in it. Not the way a launch wants names on a list. The way a sister wants her sisters in the room when the room is being made.</p>
+          <p>The first 25 women to say yes will hold something nobody else can ever hold. I would be honoured if one of them were you.</p>
+        </div>
+        <div class="note-signature">— Genevieve</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE ASK ============ -->
+<section class="ask">
+  <div class="container-narrow">
+    <div class="ask-content">
+      <div class="ask-eyebrow">07 · The ask</div>
+      <h2 class="ask-heading">Join the <span class="pink">founding 25</span>.</h2>
+      <p class="ask-sub">Hers to say. Hers to build. Hers to begin.</p>
+      <a href="#" class="cta-button">Claim your spot</a>
+      <div class="ask-fineprint">Lifetime rate · 25 places · Closing when full</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-mark">AL<span class="o">O</span>UD</div>
+  <div class="footer-tag">Hers to say · Lisbon · 2026</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.invitation, .why, .stack, .first-mic, .founding, .number-section, .note, .ask').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

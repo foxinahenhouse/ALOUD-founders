@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ALOUD — The Founding 25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Glassure';
+  src: url('fonts/Glassure.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --lime: #C8FF3A;
+  --red: #E8281A;
+  --pink: #F4C4D4;
+  --lilac: #C97ED8;
+  --periwinkle: #7B7BE0;
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --off-white: #F5F5F2;
+  --ink-soft: #2A2A2A;
+
+  --display: 'Glassure', 'Cinzel', serif;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --hand: 'Caveat', cursive;
+
+  --ease: cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--lilac); color: var(--white); }
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: var(--black);
+  border-bottom: 3px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  transition: padding 250ms var(--ease);
+}
+.nav.compact { padding: 0.7rem 3rem; }
+.nav-word {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+}
+.nav-word .o {
+  color: var(--lime);
+  display: inline-block;
+  animation: spin-o 20s linear infinite;
+  transform-origin: 50% 55%;
+}
+@keyframes spin-o {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.nav-badge {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--lime);
+  border: 1.5px solid var(--lime);
+  padding: 0.45rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--lime);
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.65); }
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 10rem 3rem 6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 3px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.hero-ghost {
+  position: absolute;
+  bottom: -0.1em;
+  right: -0.04em;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(18rem, 42vw, 56rem);
+  color: var(--lime);
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.04em;
+}
+.hero-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 40px; height: 1px;
+  background: var(--lime);
+}
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  max-width: 22ch;
+  margin-bottom: 5rem;
+}
+.hero-quote .stroke {
+  font-style: normal;
+  font-family: var(--display);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--white);
+  letter-spacing: 0.02em;
+  font-size: 0.88em;
+}
+.hero-quote .accent {
+  font-style: normal;
+  font-family: var(--display);
+  font-weight: 900;
+  color: var(--lime);
+  letter-spacing: 0.02em;
+  font-size: 0.88em;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding-top: 2rem;
+}
+.hero-meta-item {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  padding-right: 2rem;
+}
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 0.5rem;
+  color: var(--white);
+}
+
+/* ─── MARQUEE ─── */
+.marquee {
+  background: var(--lime);
+  border-bottom: 3px solid var(--black);
+  padding: 1.75rem 0;
+  overflow: hidden;
+  cursor: default;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--black);
+  white-space: nowrap;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  flex-shrink: 0;
+}
+.m-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--black);
+  display: inline-block;
+  flex-shrink: 0;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.section-label .rule {
+  display: inline-block;
+  width: 48px; height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+/* ─── INVITATION ─── */
+.invitation {
+  background: var(--white);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.invitation-inner { max-width: 1320px; margin: 0 auto; }
+.invitation-text {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.5vw, 5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--black);
+  max-width: 22ch;
+  margin-bottom: 3.5rem;
+}
+.invitation-text .hl {
+  background: var(--lilac);
+  color: var(--black);
+  padding: 0.06em 0.28em;
+  display: inline-block;
+  transform: rotate(-1.4deg);
+  margin: 0 0.1em;
+}
+.tag-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.1rem;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+}
+.tag.filled { background: var(--black); color: var(--white); }
+
+/* ─── WHY NOW ─── */
+.why {
+  background: var(--red);
+  color: var(--off-white);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.why::after {
+  content: '✿';
+  position: absolute;
+  right: -2rem; top: 4rem;
+  font-size: 28rem;
+  color: var(--pink);
+  opacity: 0.07;
+  pointer-events: none;
+  font-family: serif;
+  line-height: 1;
+}
+.why-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.why .section-label { color: var(--pink); }
+.why-heading {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.5vw, 5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  max-width: 20ch;
+  margin-bottom: 3.5rem;
+}
+.why-heading .ul {
+  position: relative;
+  display: inline-block;
+}
+.why-heading .ul::after {
+  content: '';
+  position: absolute;
+  bottom: 0.06em; left: -0.04em; right: -0.04em;
+  height: 0.14em;
+  background: var(--lime);
+  z-index: -1;
+}
+.why-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--off-white);
+  max-width: 64ch;
+  columns: 2;
+  gap: 4rem;
+}
+.why-body p { margin-bottom: 1.4rem; break-inside: avoid; }
+.why-body strong {
+  background: var(--lime);
+  color: var(--black);
+  padding: 0.04em 0.2em;
+}
+
+/* ─── STACK ─── */
+.stack {
+  background: var(--black);
+  color: var(--white);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.stack-inner { max-width: 1320px; margin: 0 auto; }
+.stack .section-label { color: var(--lime); }
+.stack-header {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+.stack-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.stack-heading .accent { color: var(--lime); }
+.stack-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  opacity: 0.75;
+  max-width: 32ch;
+}
+.layers { display: flex; flex-direction: column; }
+.layer {
+  display: grid;
+  grid-template-columns: 90px 1fr 2.2fr;
+  gap: 2.5rem;
+  padding: 3rem 0;
+  border-top: 1.5px solid rgba(255,255,255,0.14);
+  align-items: start;
+}
+.layer:last-child { border-bottom: 1.5px solid rgba(255,255,255,0.14); }
+.layer-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--lime);
+}
+.layer-name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--white);
+}
+.layer-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-top: 0.85rem;
+}
+.layer-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+}
+.programs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.program {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid rgba(255,255,255,0.38);
+  color: var(--white);
+  transition: all 200ms;
+  cursor: default;
+}
+.program:hover { background: var(--lime); border-color: var(--lime); color: var(--black); }
+.stack-closer {
+  margin-top: 5rem;
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  text-transform: uppercase;
+  color: var(--lime);
+  letter-spacing: 0.02em;
+}
+
+/* ─── FIRST NIGHT ─── */
+.first-night {
+  background: var(--lime);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.first-night-inner { max-width: 1320px; margin: 0 auto; }
+.first-night .section-label { color: var(--black); }
+.night-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 5rem;
+}
+.night-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6.5vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 3rem;
+}
+.night-heading .stroke {
+  -webkit-text-stroke: 2.5px var(--black);
+  color: transparent;
+}
+.night-heading .fuchsia { color: var(--lilac); }
+.event-card {
+  background: var(--white);
+  border: 2.5px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+  padding: 2rem 2.25rem;
+}
+.event-row {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.event-row:first-child { padding-top: 0; }
+.event-row:last-child { border-bottom: none; padding-bottom: 0; }
+.event-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lilac);
+  margin-bottom: 0.35rem;
+}
+.event-val {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--black);
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.event-val .hand {
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  max-width: 480px;
+}
+.cd-cell {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 1.25rem 0.5rem;
+}
+.cd-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2.6rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cd-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-top: 0.4rem;
+}
+.lineup {
+  border-top: 2px solid var(--black);
+  padding-top: 3rem;
+}
+.lineup-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: var(--black);
+  border: 2px solid var(--black);
+}
+.lineup-cell {
+  background: var(--lime);
+  padding: 1.5rem 1.25rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: background 200ms;
+}
+.lineup-cell:hover { background: var(--white); }
+.lineup-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--black);
+  line-height: 1.1;
+}
+.lineup-form {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lilac);
+  margin-top: auto;
+}
+.lineup-cell.tbd .lineup-name {
+  color: rgba(0,0,0,0.32);
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ─── FOUNDING MEMBERSHIP ─── */
+.founding {
+  background: var(--lilac);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.founding-inner { max-width: 1320px; margin: 0 auto; }
+.founding .section-label { color: var(--black); }
+.founding-header {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4.5rem;
+}
+.founding-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.3rem, 5.5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.founding-heading .cream { color: var(--white); }
+.founding-lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--black);
+  max-width: 40ch;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 2.5px solid var(--black);
+  border-left: 2.5px solid var(--black);
+}
+.benefit {
+  padding: 2.5rem 2rem;
+  border-right: 2.5px solid var(--black);
+  border-bottom: 2.5px solid var(--black);
+  background: var(--lilac);
+  transition: background 260ms;
+}
+.benefit:hover { background: var(--white); }
+.b-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2.75rem;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+.b-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+.b-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--black);
+}
+.b-desc strong { font-weight: 700; }
+.pricing-bar {
+  margin-top: 3.5rem;
+  background: var(--black);
+  color: var(--white);
+  padding: 2.5rem 2.75rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 3rem;
+  align-items: center;
+  border: 2.5px solid var(--black);
+}
+.pricing-text {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.pricing-text .accent { color: var(--lime); }
+.price-block {
+  text-align: right;
+  border-left: 1.5px solid rgba(255,255,255,0.2);
+  padding-left: 2.5rem;
+}
+.p-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 0.4rem;
+}
+.p-val {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ─── THE NUMBER ─── */
+.the-number {
+  background: var(--white);
+  border-bottom: 3px solid var(--black);
+  padding: 6rem 3rem 7rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.num-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--black);
+  border: 2px solid var(--black);
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.num-display {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(10rem, 28vw, 22rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--black);
+  display: inline-block;
+  position: relative;
+}
+.num-minus {
+  font-family: 'Caveat', cursive;
+  font-weight: 500;
+  font-size: 0.18em;
+  color: var(--lilac);
+  position: absolute;
+  top: 0.2em;
+  right: -1.5em;
+  transform: rotate(-8deg);
+  white-space: nowrap;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1;
+}
+.num-caption {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  text-transform: uppercase;
+  color: var(--black);
+  margin-top: 1rem;
+}
+.num-progress {
+  margin: 2.5rem auto 0;
+  max-width: 500px;
+  height: 14px;
+  border: 1.5px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.num-progress-fill {
+  height: 100%;
+  width: 52%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--lilac) 0, var(--lilac) 8px,
+    #a355c3 8px, #a355c3 16px
+  );
+}
+.num-progress-label {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+/* ─── NOTE ─── */
+.note {
+  background: var(--off-white);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.note-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.portrait-wrap { position: sticky; top: 7rem; }
+.portrait {
+  aspect-ratio: 4/5;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--lilac) 0 14px,
+    var(--periwinkle) 14px 28px
+  );
+  border: 2px solid var(--black);
+  box-shadow: 8px 8px 0 var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+.portrait::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255,255,255,0.5);
+  pointer-events: none;
+}
+.portrait-caption {
+  margin-top: 1.25rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.portrait-caption .hand {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--lilac);
+  font-weight: 500;
+}
+.note .section-label { color: var(--black); }
+.note-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 0.96;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+}
+.note-heading .pink { color: var(--lilac); }
+.note-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--black);
+}
+.note-body p { margin-bottom: 1.5rem; }
+.note-body p:first-child::first-letter {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 0.82;
+  float: left;
+  margin: 0.05em 0.12em 0 -0.04em;
+  color: var(--lilac);
+}
+.sig {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.sig-name {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: var(--lilac);
+  line-height: 1;
+}
+.sig-role {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ─── FAQ ─── */
+.faq {
+  background: var(--white);
+  border-bottom: 3px solid var(--black);
+  padding: 8rem 3rem;
+}
+.faq-inner { max-width: 1320px; margin: 0 auto; }
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 6rem;
+  align-items: start;
+}
+.faq-sticky-head {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 0.96;
+  position: sticky;
+  top: 6.5rem;
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-top: 2px solid var(--black);
+  cursor: pointer;
+}
+.faq-item:last-child { border-bottom: 2px solid var(--black); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.9vw, 1.45rem);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--black);
+  user-select: none;
+}
+.faq-toggle {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--lilac);
+  flex-shrink: 0;
+  width: 1.5rem;
+  text-align: center;
+  transition: transform 200ms;
+  line-height: 1;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms var(--ease), padding 400ms var(--ease);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.faq-item.open .faq-a {
+  max-height: 400px;
+  padding-bottom: 1.5rem;
+}
+
+/* ─── NEWSLETTER ─── */
+.newsletter {
+  background: var(--periwinkle);
+  color: var(--white);
+  border-bottom: 3px solid var(--black);
+  padding: 6rem 3rem 6.5rem;
+  text-align: center;
+}
+.newsletter-inner { max-width: 680px; margin: 0 auto; }
+.nl-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 1.5rem;
+}
+.nl-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  text-transform: uppercase;
+  line-height: 0.96;
+  margin-bottom: 1rem;
+}
+.nl-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 2.5rem;
+}
+.nl-form {
+  display: flex;
+  max-width: 520px;
+  margin: 0 auto;
+  border: 2px solid var(--white);
+}
+.nl-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  outline: none;
+}
+.nl-form input::placeholder { color: rgba(255,255,255,0.38); }
+.nl-form button {
+  background: var(--lime);
+  border: none;
+  color: var(--black);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 1.75rem;
+  cursor: pointer;
+  transition: background 200ms;
+  white-space: nowrap;
+}
+.nl-form button:hover { background: var(--black); color: var(--white); }
+.nl-msg {
+  margin-top: 1.25rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: var(--lime);
+  min-height: 1.6em;
+}
+
+/* ─── CTA ─── */
+.cta-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 10rem 3rem 11rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-ghost {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 22vw;
+  color: var(--lime);
+  opacity: 0.05;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.cta-inner { position: relative; z-index: 2; }
+.cta-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--lime);
+  border: 1.5px solid var(--lime);
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.cta-heading {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.cta-heading .pink { color: var(--lime); }
+.cta-sub {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 3.5rem;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--lime);
+  color: var(--black);
+  border: 2.5px solid var(--lime);
+  padding: 1.5rem 3.5rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 8px 8px 0 rgba(200,255,58,0.25);
+  transition: all 220ms var(--ease);
+}
+.cta-btn:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0 rgba(200,255,58,0.25);
+}
+.cta-fine {
+  margin-top: 2.5rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 3.5rem 3rem 2.5rem;
+  border-top: 3px solid rgba(255,255,255,0.07);
+}
+.footer-inner { max-width: 1320px; margin: 0 auto; }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.footer-mark {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+}
+.footer-mark .o { color: var(--lime); }
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.footer-links a { opacity: 0.6; transition: opacity 180ms, color 180ms; }
+.footer-links a:hover { opacity: 1; color: var(--lime); }
+.footer-bar {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ─── MODAL ─── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.88);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms var(--ease);
+}
+.modal-backdrop.open { opacity: 1; pointer-events: auto; }
+.modal {
+  background: var(--white);
+  color: var(--black);
+  border: 2.5px solid var(--black);
+  max-width: 520px;
+  width: 100%;
+  padding: 2.75rem;
+  position: relative;
+  transform: translateY(24px) scale(0.96);
+  transition: transform 280ms var(--ease);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 12px 12px 0 var(--lilac);
+}
+.modal-backdrop.open .modal { transform: none; }
+.modal-x {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: none;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--black);
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-x:hover { color: var(--lilac); }
+.modal-title {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.modal-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.field label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.field input, .field textarea {
+  border: 2px solid var(--black);
+  background: var(--white);
+  color: var(--black);
+  padding: 0.75rem 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  outline: none;
+  border-radius: 2px;
+  transition: border-color 180ms, box-shadow 180ms;
+}
+.field input:focus, .field textarea:focus {
+  border-color: var(--lilac);
+  box-shadow: 0 0 0 3px rgba(201,126,216,0.2);
+}
+.field textarea { min-height: 80px; resize: vertical; font-family: 'Playfair Display', serif; }
+.field-err { font-size: 0.72rem; color: var(--red); font-style: italic; margin-top: 0.1rem; }
+.plan-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid var(--black);
+}
+.plan-opt {
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  border-right: 2px solid var(--black);
+  transition: all 180ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+.plan-opt:last-child { border-right: none; }
+.plan-opt input { display: none; }
+.plan-opt.selected { background: var(--black); color: var(--white); }
+.modal-submit {
+  width: 100%;
+  background: var(--lilac);
+  color: var(--white);
+  border: 2px solid var(--black);
+  padding: 1.1rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 4px 4px 0 var(--black);
+  transition: all 200ms;
+}
+.modal-submit:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--black); background: #a355c3; }
+.modal-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.modal-success { text-align: center; padding: 2rem 1rem; }
+.modal-success .s-hand {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  color: var(--lilac);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.modal-success h3 {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.modal-success p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+/* ─── HERO BLAST ─── */
+.hero-blast {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(5rem, 15vw, 13rem);
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 3.5rem;
+  white-space: nowrap;
+}
+
+/* ─── STATEMENT ─── */
+.statement {
+  background: var(--black);
+  border-bottom: 3px solid var(--black);
+  padding: 4rem 3rem;
+  overflow: hidden;
+}
+.statement-inner { max-width: 1320px; margin: 0 auto; }
+.s-line {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(5.5rem, 16vw, 14rem);
+  line-height: 0.87;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  display: block;
+  color: var(--white);
+}
+.s-line.s-lime { color: var(--lime); }
+.s-line.s-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.3);
+}
+
+/* ─── INVITE CARDS ─── */
+.invite-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 4rem;
+  max-width: 460px;
+  background: var(--black);
+  border: 2.5px solid var(--black);
+}
+.invite-card {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+}
+.invite-card.dark { background: var(--black); color: var(--white); }
+.invite-card.light { background: var(--off-white); color: var(--black); }
+.ic-num {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: auto;
+}
+.invite-card.dark .ic-num { color: var(--lime); }
+.ic-label {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+.ic-arrow {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.invite-card.dark .ic-arrow { color: var(--lime); }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  .nav { padding: 0.9rem 1.5rem; }
+  .nav-badge { display: none; }
+  .hero { padding: 7.5rem 1.5rem 4rem; min-height: auto; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 1.5rem 0; }
+  .hero-meta-item { padding-right: 1rem; }
+  .invitation, .why, .stack, .first-night, .founding, .the-number, .note, .faq, .newsletter, .cta-section { padding: 5rem 1.5rem; }
+  .why-body { columns: 1; }
+  .stack-header, .founding-header { grid-template-columns: 1fr; gap: 2rem; }
+  .night-top { grid-template-columns: 1fr; gap: 2.5rem; }
+  .note-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .portrait-wrap { position: static; max-width: 260px; }
+  .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .faq-sticky-head { position: static; }
+  .layer { grid-template-columns: 70px 1fr; gap: 1.5rem; padding: 2rem 0; }
+  .layer > :last-child { grid-column: 1 / -1; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .pricing-bar { grid-template-columns: 1fr; gap: 1.5rem; }
+  .price-block { text-align: left; border-left: none; padding-left: 0; border-top: 1.5px solid rgba(255,255,255,0.18); padding-top: 1rem; }
+  .lineup-grid { grid-template-columns: repeat(2, 1fr); }
+  .countdown { max-width: 100%; }
+  .nl-form { flex-direction: column; }
+  .nl-form button { padding: 1rem; }
+  .footer-top { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .footer-bar { flex-direction: column; gap: 0.5rem; }
+  .statement { padding: 3rem 1.5rem; }
+  .hero-blast { font-size: clamp(3.2rem, 12vw, 6rem); margin-bottom: 2.5rem; }
+  .invite-cards { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-word">AL<span class="o">O</span>UD</div>
+  <div class="nav-badge">Founding Circle · By invitation</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ghost">ALOUD</div>
+  <div class="hero-inner">
+    <div class="hero-blast" aria-hidden="true">Hers to say.</div>
+    <div class="hero-eyebrow">Before the doors open</div>
+    <h1 class="hero-quote">
+      A woman speaking <span class="stroke">out loud</span> is an act of memory and an act of <span class="accent">future-making</span> at once.
+    </h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Project<strong>ALOUD</strong></div>
+      <div class="hero-meta-item">Phase<strong>Founding 25</strong></div>
+      <div class="hero-meta-item">Location<strong>Lisbon</strong></div>
+      <div class="hero-meta-item">Status<strong>13 of 25 left</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-group">Hers to say <span class="m-dot"></span> Hers to write <span class="m-dot"></span> Hers to read aloud <span class="m-dot"></span> Hers to begin <span class="m-dot"></span> Hers to remember <span class="m-dot"></span> Hers to build <span class="m-dot"></span></span>
+    <span class="marquee-group">Hers to say <span class="m-dot"></span> Hers to write <span class="m-dot"></span> Hers to read aloud <span class="m-dot"></span> Hers to begin <span class="m-dot"></span> Hers to remember <span class="m-dot"></span> Hers to build <span class="m-dot"></span></span>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-inner">
+    <span class="s-line">A stage.</span>
+    <span class="s-line s-stroke">A microphone.</span>
+    <span class="s-line s-lime">Five minutes.</span>
+    <span class="s-line">Any format.</span>
+  </div>
+</section>
+
+<!-- 01 INVITATION -->
+<section class="invitation reveal">
+  <div class="invitation-inner">
+    <div class="section-label"><span class="rule"></span><span>01 · The invitation</span></div>
+    <p class="invitation-text">
+      ALOUD is launching in Lisbon. Before we open the doors,<span class="hl">25 women</span>will found it with us — and shape what it becomes.
+    </p>
+    <div class="tag-row">
+      <span class="tag filled">Lisbon · Chapter 01</span>
+      <span class="tag">Monthly · third Thursday</span>
+      <span class="tag">No auditions</span>
+    </div>
+    <div class="invite-cards">
+      <div class="invite-card dark">
+        <div class="ic-num">25</div>
+        <div class="ic-label">Founding<br>seats</div>
+        <div class="ic-arrow">→</div>
+      </div>
+      <div class="invite-card light">
+        <div class="ic-num">01</div>
+        <div class="ic-label">Lisbon<br>chapter</div>
+        <div class="ic-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHY NOW -->
+<section class="why reveal">
+  <div class="why-inner">
+    <div class="section-label"><span class="rule"></span><span>02 · Why now</span></div>
+    <h2 class="why-heading">For the <span class="ul">grandmothers</span> whose voices were edited out, and for the daughters not yet old enough to read.</h2>
+    <div class="why-body">
+      <p>Most of the women I come from did not get to speak. Their writing lived in margins and recipe cards. Their best lines were said at sinks, into the steam, to no one. Whole lifetimes of intelligence and feeling moved through them and left no public trace.</p>
+      <p>I think about this often. Especially when I am in a room of women, and the room is laughing or weeping or going very quiet, and someone has just said the thing that needed saying — and I realize how recent it is that we get to gather like this at all.</p>
+      <p>ALOUD is a stage and a community for women's voices, in writing and in speech, in performance and in private. But it is also, more quietly, <strong>an archive</strong>. Every word read aloud at ALOUD is recorded into the long memory of women's voices being heard.</p>
+      <p>It is a gift to the grandmothers we lost without ever fully hearing. It is a stage for the daughters who will inherit us. And it is, right now, an invitation to twenty-five women who want to help build it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 STACK -->
+<section class="stack reveal">
+  <div class="stack-inner">
+    <div class="section-label"><span class="rule"></span><span>03 · What we're building</span></div>
+    <div class="stack-header">
+      <h2 class="stack-heading">The architecture is a <span class="accent">stack</span>, not a list.</h2>
+      <p class="stack-sub">Three layers, working together. Events bring her in. Membership holds her. Care brings her back.</p>
+    </div>
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-num">01</div>
+        <div>
+          <div class="layer-name">The Stage</div>
+          <div class="layer-tag">Live · Public · Collective</div>
+        </div>
+        <div>
+          <p class="layer-text">Five formats of voice, each a different register. Spoken into a microphone. Written and read. Drafted in a circle of eight. Spoken over food. Voiced through the body.</p>
+          <div class="programs">
+            <span class="program">The Mic</span>
+            <span class="program">The Read</span>
+            <span class="program">The Circle</span>
+            <span class="program">The Table</span>
+            <span class="program">The Body</span>
+          </div>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">02</div>
+        <div>
+          <div class="layer-name">The Room</div>
+          <div class="layer-tag">Persistent · Digital · Communal</div>
+        </div>
+        <div>
+          <p class="layer-text">The membership layer. The community that lives between events — where members gather, share work in progress, find their pod, and build the archive-in-progress together.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">03</div>
+        <div>
+          <div class="layer-name">The Care</div>
+          <div class="layer-tag">Connective · Human · Intentional</div>
+        </div>
+        <div>
+          <p class="layer-text">The Check-In, and the ethos beneath everything. The reason a woman comes back. First-timers are sacred at ALOUD; this is the layer that holds the promise.</p>
+        </div>
+      </div>
+    </div>
+    <p class="stack-closer">Each layer feeds the next. The stack is what makes ALOUD more than its events.</p>
+  </div>
+</section>
+
+<!-- 04 FIRST NIGHT -->
+<section class="first-night reveal">
+  <div class="first-night-inner">
+    <div class="section-label"><span class="rule"></span><span>04 · The first night</span></div>
+    <div class="night-top">
+      <div>
+        <h2 class="night-heading">
+          One hundred women,<br>
+          <span class="stroke">one room</span>,<br>
+          <span class="fuchsia">one night.</span>
+        </h2>
+        <div class="countdown" id="countdown" aria-label="Countdown to first Mic">
+          <div class="cd-cell"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cd-h">--</div><div class="cd-label">Hours</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cd-m">--</div><div class="cd-label">Mins</div></div>
+          <div class="cd-cell"><div class="cd-num" id="cd-s">--</div><div class="cd-label">Secs</div></div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-row">
+          <div class="event-label">Date</div>
+          <div class="event-val">May 27, 2026 <span class="hand">— Thursday</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-label">Venue</div>
+          <div class="event-val">Cultura Lounge</div>
+        </div>
+        <div class="event-row">
+          <div class="event-label">City</div>
+          <div class="event-val">Lisbon</div>
+        </div>
+        <div class="event-row">
+          <div class="event-label">Founding members</div>
+          <div class="event-val">In the front row</div>
+        </div>
+      </div>
+    </div>
+    <div class="lineup">
+      <div class="lineup-label">— A draft of the lineup —</div>
+      <div class="lineup-grid">
+        <div class="lineup-cell"><div class="lineup-name">Marta R.</div><div class="lineup-form">Spoken Word</div></div>
+        <div class="lineup-cell"><div class="lineup-name">Inês D.</div><div class="lineup-form">Storytelling</div></div>
+        <div class="lineup-cell"><div class="lineup-name">Joana C.</div><div class="lineup-form">Comedy</div></div>
+        <div class="lineup-cell"><div class="lineup-name">Sofia L.</div><div class="lineup-form">Music</div></div>
+        <div class="lineup-cell"><div class="lineup-name">Beatriz M.</div><div class="lineup-form">Essay · Read</div></div>
+        <div class="lineup-cell"><div class="lineup-name">Mariana V.</div><div class="lineup-form">Poetry</div></div>
+        <div class="lineup-cell tbd"><div class="lineup-name">— Yours? —</div><div class="lineup-form">Open</div></div>
+        <div class="lineup-cell tbd"><div class="lineup-name">— TBD —</div><div class="lineup-form">Open</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 FOUNDING MEMBERSHIP -->
+<section class="founding reveal">
+  <div class="founding-inner">
+    <div class="section-label"><span class="rule"></span><span>05 · Founding membership</span></div>
+    <div class="founding-header">
+      <h2 class="founding-heading">Founding members don't <span class="cream">join</span> ALOUD. They make it possible.</h2>
+      <p class="founding-lead">Twenty-five women will found ALOUD before the doors open. What you receive is what cannot be offered again — not at this rate, not at this proximity, not at this stage.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <div class="b-num">01</div>
+        <h3 class="b-title">Lifetime founding rate</h3>
+        <p class="b-desc">Lock in today's rate <strong>for life</strong>. Never raised, even as ALOUD grows into chapters. This rate disappears at member 26.</p>
+      </div>
+      <div class="benefit">
+        <div class="b-num">02</div>
+        <h3 class="b-title">Your name in the founding archive</h3>
+        <p class="b-desc">The 25 names on the founding roll are kept permanently — in the physical archive, in the digital one, on the wall of every chapter ALOUD opens.</p>
+      </div>
+      <div class="benefit">
+        <div class="b-num">03</div>
+        <h3 class="b-title">Priority on every Stage event</h3>
+        <p class="b-desc">First seats at every Mic. First spots in The Circle (capped at eight). First places at The Table. <strong>You don't queue for what you helped build.</strong></p>
+      </div>
+      <div class="benefit">
+        <div class="b-num">04</div>
+        <h3 class="b-title">The founding gathering</h3>
+        <p class="b-desc">A private dinner before the first public Mic. The 25 of you, together, the night before ALOUD becomes ALOUD. <strong>You meet your sisters in this work.</strong></p>
+      </div>
+      <div class="benefit">
+        <div class="b-num">05</div>
+        <h3 class="b-title">A voice in what we build next</h3>
+        <p class="b-desc">Founding members shape the year ahead. New formats, new partnerships, the question of which city becomes ALOUD's second chapter. <strong>You are consulted.</strong></p>
+      </div>
+      <div class="benefit">
+        <div class="b-num">06</div>
+        <h3 class="b-title">Everything else, included</h3>
+        <p class="b-desc">All Stage events, full access to The Room, your pod, The Check-In, every workshop and gathering. <strong>The whole world, not a tier.</strong></p>
+      </div>
+    </div>
+    <div class="pricing-bar">
+      <div class="pricing-text">Today's rate. <span class="accent">Locked for life.</span> After 25, it changes — and never returns.</div>
+      <div class="price-block"><div class="p-label">Monthly</div><div class="p-val">€55</div></div>
+      <div class="price-block"><div class="p-label">Quarterly</div><div class="p-val">€135</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 THE NUMBER -->
+<section class="the-number reveal">
+  <div class="num-eyebrow">The founding circle</div>
+  <div class="num-display">25<span class="num-minus">minus 12 spoken for</span></div>
+  <div class="num-caption">Twenty-five women. One circle.</div>
+  <div class="num-progress"><div class="num-progress-fill"></div></div>
+  <div class="num-progress-label">13 of 25 places open · closing when full</div>
+</section>
+
+<!-- 07 NOTE -->
+<section class="note reveal">
+  <div class="note-inner">
+    <div class="portrait-wrap">
+      <div class="portrait">[ Portrait of Genevieve ]</div>
+      <div class="portrait-caption">
+        Genevieve · Founder
+        <span class="hand">— Lisbon, 2026</span>
+      </div>
+    </div>
+    <div>
+      <div class="section-label"><span class="rule"></span><span>06 · A note from me</span></div>
+      <h2 class="note-heading">Sisterhood is the <span class="pink">oldest technology</span> I know.</h2>
+      <div class="note-body">
+        <p>I have spent the last two and a half years gathering people in writing circles in Lisbon. Over a hundred came through those rooms. Some of them are still my closest friends. All of them taught me that the room itself is the work — that what we build between us, in language and in attention, is real.</p>
+        <p>ALOUD is the next thing. It is the room I want to spend my life building. It is, specifically and intentionally, a room for women — because the lineage I keep finding myself inside is a lineage of women, and because the silence I keep finding myself wanting to break is the silence women have inherited.</p>
+        <p>If you are reading this, it is because I want you in it. Not the way a launch wants names on a list. The way a sister wants her sisters in the room when the room is being made.</p>
+        <p>The first 25 women to say yes will hold something nobody else can ever hold. I would be honoured if one of them were you.</p>
+      </div>
+      <div class="sig">
+        <span class="sig-name">— Genevieve</span>
+        <span class="sig-role">Founder · ALOUD</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 FAQ -->
+<section class="faq reveal">
+  <div class="faq-inner">
+    <div class="section-label"><span class="rule"></span><span>07 · Questions, asked plainly</span></div>
+    <div class="faq-grid">
+      <h2 class="faq-sticky-head">What you might be wondering, before you say yes.</h2>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Do I have to perform to be a founding member?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">No. Founding members are women who want this room to exist. You can listen for a year and never approach the mic. Your seat is your seat.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is ALOUD only for women who write?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Comedy. Music. Storytelling. Spoken word. Voice notes you've never read aloud. Five minutes, any format. The mic doesn't care what's on your CV.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What does "lifetime rate" actually mean?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Whatever rate you lock in this month is the rate you pay for as long as you stay a member. Even ten years from now, in a chapter that doesn't yet exist. We will never raise it on you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I bring a friend who isn't a member?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Yes. Every founding member has a standing +1 for any Mic night, and a +2 for the first Mic on May 27. ALOUD doesn't grow without women bringing women.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens after the 25 are full?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Membership stays open at the standard rate. The founding rate, founding gathering, and founding archive all close. The 25 names are sealed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">I don't live in Lisbon. Can I still join?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Yes. Lisbon is the first chapter, not the only one. Founding members vote on city #2. The Room (digital) is global from day one.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter reveal">
+  <div class="newsletter-inner">
+    <div class="nl-eyebrow">— If now is not your moment —</div>
+    <h2 class="nl-heading">Stay close.<br>Hear when the next room opens.</h2>
+    <p class="nl-sub">A short letter, once a month. Lineups, transcripts from The Mic, a paragraph or two from the archive. No noise.</p>
+    <form class="nl-form" id="nl-form">
+      <input type="email" name="email" placeholder="your email" required aria-label="Email">
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="nl-msg" id="nl-msg"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal">
+  <div class="cta-ghost">ALOUD&nbsp;&nbsp;ALOUD&nbsp;&nbsp;ALOUD</div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">08 · The ask</div>
+    <h2 class="cta-heading">Join the <span class="pink">founding 25</span>.</h2>
+    <p class="cta-sub">Hers to say. Hers to build. Hers to begin.</p>
+    <button class="cta-btn" id="open-modal">Claim your spot →</button>
+    <div class="cta-fine">Lifetime rate · 25 places · Closing when full</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-mark">AL<span class="o">O</span>UD</div>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Contact</a>
+        <a href="#">Press</a>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>Hers to say · Lisbon · 2026</span>
+      <span>Founding circle · By invitation</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal" id="modal">
+    <button class="modal-x" id="modal-close" aria-label="Close">×</button>
+    <div id="modal-form-wrap">
+      <div class="modal-title" id="modal-title">Claim your seat</div>
+      <div class="modal-sub">A few questions, no auditions. We'll be in touch within 48 hours.</div>
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input type="text" id="f-name" name="name" required>
+          <div class="field-err" id="err-name"></div>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" required>
+          <div class="field-err" id="err-email"></div>
+        </div>
+        <div class="field">
+          <label>Plan</label>
+          <div class="plan-row" id="plan-row">
+            <label class="plan-opt selected"><input type="radio" name="plan" value="monthly" checked>Monthly · €55</label>
+            <label class="plan-opt"><input type="radio" name="plan" value="quarterly">Quarterly · €135</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-why">Why ALOUD, for you? <span style="opacity:.5;font-weight:400;letter-spacing:0">(optional)</span></label>
+          <textarea id="f-why" name="why" placeholder="A line, a paragraph, anything."></textarea>
+        </div>
+        <button type="submit" class="modal-submit" id="submit-btn">Send my yes →</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-success" style="display:none">
+      <div class="s-hand">— You're in —</div>
+      <h3>Welcome to the founding circle.</h3>
+      <p>Watch your inbox. Genevieve will write to you personally within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Sticky nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('compact', window.scrollY > 24);
+}, { passive: true });
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Countdown to May 27 2026 19:30 Lisbon (UTC+1)
+const TARGET = new Date('2026-05-27T19:30:00+01:00').getTime();
+function tick() {
+  const diff = Math.max(0, TARGET - Date.now());
+  const pad = n => String(n).padStart(2,'0');
+  document.getElementById('cd-d').textContent = pad(Math.floor(diff / 86400000));
+  document.getElementById('cd-h').textContent = pad(Math.floor(diff % 86400000 / 3600000));
+  document.getElementById('cd-m').textContent = pad(Math.floor(diff % 3600000 / 60000));
+  document.getElementById('cd-s').textContent = pad(Math.floor(diff % 60000 / 1000));
+}
+tick();
+setInterval(tick, 1000);
+
+// FAQ accordion
+document.querySelectorAll('#faq-list .faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-toggle').textContent = '+';
+    });
+    if (!wasOpen) {
+      item.classList.add('open');
+      item.querySelector('.faq-toggle').textContent = '×';
+    }
+  });
+});
+
+// Modal
+const backdrop = document.getElementById('modal-backdrop');
+function openModal() {
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('f-name').focus(), 200);
+}
+function closeModal() {
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('open-modal').addEventListener('click', openModal);
+document.getElementById('modal-close').addEventListener('click', closeModal);
+backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Plan selector
+document.getElementById('plan-row').addEventListener('change', () => {
+  document.querySelectorAll('.plan-opt').forEach(l => l.classList.remove('selected'));
+  const checked = document.querySelector('#plan-row input:checked');
+  if (checked) checked.parentElement.classList.add('selected');
+});
+
+// Signup form
+document.getElementById('signup-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const errN = document.getElementById('err-name');
+  const errE = document.getElementById('err-email');
+  errN.textContent = ''; errE.textContent = '';
+  let ok = true;
+  if (!name) { errN.textContent = 'Tell us your name.'; ok = false; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errE.textContent = "That doesn't look like an email."; ok = false; }
+  if (!ok) return;
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  setTimeout(() => {
+    document.getElementById('modal-form-wrap').style.display = 'none';
+    document.getElementById('modal-success').style.display = 'block';
+  }, 700);
+});
+
+// Newsletter
+document.getElementById('nl-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value.trim();
+  const msg = document.getElementById('nl-msg');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = '— hmm, check that email —'; return; }
+  msg.textContent = "— you're on the list. talk soon. —";
+  e.target.reset();
+});
+</script>
+</body>
+</html>
