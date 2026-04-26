@@ -28,7 +28,7 @@
   --off-white: #F5F5F2;
   --ink-soft: #2A2A2A;
 
-  --display: 'Glassure', 'Cinzel', serif;
+  --display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --hand: 'Caveat', cursive;
@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── HERO ─── */
 .hero {
-  background: var(--black);
+  background: var(--lilac);
   color: var(--white);
   padding: 10rem 3rem 6rem;
   min-height: 100vh;
@@ -316,7 +316,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── WHY NOW ─── */
 .why {
-  background: var(--red);
+  background: var(--periwinkle);
   color: var(--off-white);
   border-bottom: 3px solid var(--black);
   padding: 8rem 3rem;
@@ -340,7 +340,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 2;
 }
-.why .section-label { color: var(--pink); }
+.why .section-label { color: var(--lime); }
 .why-heading {
   font-family: var(--display);
   font-weight: 700;
@@ -428,6 +428,17 @@ a { color: inherit; text-decoration: none; }
   font-size: 3.5rem;
   line-height: 1;
   color: var(--lime);
+}
+.layer-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--lime);
+  margin-bottom: 0.6rem;
+  flex-shrink: 0;
+}
+.layer-icon svg {
+  width: 100%;
+  height: 100%;
 }
 .layer-name {
   font-family: var(--display);
@@ -1515,12 +1526,12 @@ footer {
   <div class="invitation-inner">
     <div class="section-label"><span class="rule"></span><span>01 · The invitation</span></div>
     <p class="invitation-text">
-      ALOUD is launching in Lisbon. Before we open the doors,<span class="hl">25 women</span>will found it with us — and shape what it becomes.
+      Before ALOUD opens its doors,<span class="hl">25 women</span>will found it — not as early adopters, but as the reason it exists.
     </p>
     <div class="tag-row">
       <span class="tag filled">Lisbon · Chapter 01</span>
-      <span class="tag">Monthly · third Thursday</span>
-      <span class="tag">No auditions</span>
+      <span class="tag">Monthly · third Wednesday</span>
+      <span class="tag">No auditions. No pitch.</span>
     </div>
     <div class="invite-cards">
       <div class="invite-card dark">
@@ -1563,6 +1574,7 @@ footer {
       <div class="layer">
         <div class="layer-num">01</div>
         <div>
+          <div class="layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div>
           <div class="layer-name">The Stage</div>
           <div class="layer-tag">Live · Public · Collective</div>
         </div>
@@ -1580,6 +1592,7 @@ footer {
       <div class="layer">
         <div class="layer-num">02</div>
         <div>
+          <div class="layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6"/><path d="M21 20c0-3.5-2.7-6-6-6"/><path d="M9 14c1.5-.8 3.5-.8 5 0"/></svg></div>
           <div class="layer-name">The Room</div>
           <div class="layer-tag">Persistent · Digital · Communal</div>
         </div>
@@ -1590,6 +1603,7 @@ footer {
       <div class="layer">
         <div class="layer-num">03</div>
         <div>
+          <div class="layer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <div class="layer-name">The Care</div>
           <div class="layer-tag">Connective · Human · Intentional</div>
         </div>
@@ -1623,7 +1637,7 @@ footer {
       <div class="event-card">
         <div class="event-row">
           <div class="event-label">Date</div>
-          <div class="event-val">May 27, 2026 <span class="hand">— Thursday</span></div>
+          <div class="event-val">May 28, 2026 <span class="hand">— Wednesday</span></div>
         </div>
         <div class="event-row">
           <div class="event-label">Venue</div>
@@ -1760,7 +1774,7 @@ footer {
         </div>
         <div class="faq-item">
           <div class="faq-q">Can I bring a friend who isn't a member?<span class="faq-toggle">+</span></div>
-          <div class="faq-a">Yes. Every founding member has a standing +1 for any Mic night, and a +2 for the first Mic on May 27. ALOUD doesn't grow without women bringing women.</div>
+          <div class="faq-a">Yes. Every founding member has a standing +1 for any Mic night, and a +2 for the first Mic on May 28. ALOUD doesn't grow without women bringing women.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">What happens after the 25 are full?<span class="faq-toggle">+</span></div>
@@ -1873,7 +1887,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Countdown to May 27 2026 19:30 Lisbon (UTC+1)
-const TARGET = new Date('2026-05-27T19:30:00+01:00').getTime();
+const TARGET = new Date('2026-05-28T19:30:00+01:00').getTime();
 function tick() {
   const diff = Math.max(0, TARGET - Date.now());
   const pad = n => String(n).padStart(2,'0');
